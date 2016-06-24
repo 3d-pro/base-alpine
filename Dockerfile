@@ -3,6 +3,7 @@ FROM alpine:edge
 ENV TERM=xterm
 RUN mkdir -p /etc/apk && echo "http://alpine.gliderlabs.com/alpine/edge/main" > /etc/apk/repositories && \
     echo "http://alpine.gliderlabs.com/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://alpine.gliderlabs.com/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && apk add openrc rsyslog bash && \
     rc-update add rsyslog default && \
     sed -i 's/#rc_sys=""/rc_sys="lxc"/g' /etc/rc.conf && \
