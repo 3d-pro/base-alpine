@@ -4,5 +4,5 @@ services:
 
 script:
    - docker build -t 3dpro/base-alpine .
-   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
    - docker push 3dpro/base-alpine
